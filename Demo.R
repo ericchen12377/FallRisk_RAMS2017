@@ -1,5 +1,5 @@
 data<-read.csv(file="Data/daystofall_Demo.csv",header=FALSE, sep=",")
-cov<-read.csv(file="Data/covirates_Demo.csv",header=TRUE, sep=",",na.strings = " ")
+cov<-read.csv(file="Data/covariates_Demo.csv",header=TRUE, sep=",",na.strings = " ")
 
 
 ###Data Processing for Openbugs inputs
