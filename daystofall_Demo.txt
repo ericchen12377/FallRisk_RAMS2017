@@ -1,0 +1,23 @@
+
+    
+    model {
+    for (j in 1:M) {
+    for (i in 1:(K[j]-1)) {
+    zeros[j,i] <- 0;
+    log(X[j,i]) <- b0+b[1]*covA[j]+b[2]*covB[j]+theta[j];
+    lambda[j,i] <- X[j,i]*pow(t[j,i+1],beta[j])-X[j,i]*pow(t[j,i],beta[j]);
+    lambda_d[j,i] <- X[j,i]*beta[j]*pow(t[j,i+1],beta[j]-1);
+    L[j,i]<-lambda_d[j,i]*exp(-lambda[j,i]);
+    phi[j,i] <- -log(L[j,i]);
+    zeros[j,i] ~ dpois(phi[j,i]);
+    }
+    theta[j] ~ dnorm(0,10);
+    beta[j] ~ dunif(0,1);
+
+    }
+    for(k in 1:2){
+    b[k]~ dnorm(-1,10);
+    }
+    b0~ dnorm(-1,10);
+    }
+    
