@@ -7,5 +7,5 @@
 - **Plot.R** is used to generation the visualizaiton plot for the time-to-event data **daystofall_Plot.csv** in the **Data** folder. 
 The plot will show as below:
 ![](Plot.png)
-- **Demo.R** is used to build the model and run through Openbugs. The demo illustrates the model with covariates. The output of Openbugs will show as below:
+- **Demo.R** is used to build the model and run through Openbugs. The demo illustrates the model with covariates. The output of Openbugs will show as below and the full report is in **OutputLog_Demo.pdf**.
 ![](OpenbugsScreenshot_Demo.png)
